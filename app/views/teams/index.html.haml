@@ -1,0 +1,10 @@
+.main
+  .teams
+    - @teams.each do |team|
+      .teams__team
+        .teams__team__logo
+          = attachment_image_tag team, :image
+        .teams__team__name
+          = team.name.upcase
+        = link_to "コメントへ", team_path(team), class: "teams__team__message"
+        

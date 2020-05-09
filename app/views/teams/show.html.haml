@@ -1,0 +1,46 @@
+
+.detail 
+  .datail__info
+    = "チーム名: #{@team.name.upcase}"
+  .detail__info
+    = "ホームタウン: #{@team.home.upcase}"
+  .detail__info
+    = "スタジアム: #{@team.stadium.upcase}"
+  .detail__info
+    = "創設年: #{@team.founding_year}年"
+  .detail__info
+    .detail__info__back
+      チーム情報を非表示にする
+
+  - if user_signed_in?
+    -if current_user == @user || current_user.admin?
+      .detail__edit
+        = link_to "チーム編集", edit_team_path(@team), class: "detail__edit__link"
+  
+
+
+
+.secret-btn
+  %h2
+    チーム情報
+  
+.comments-box
+  .comments
+    - @comments.each do |comment|
+      .comments__comment
+        .comments__comment__text
+          = simple_format comment.comment
+        .comments__comment__info
+          .comments__comment__info__name
+            = link_to "#{comment.user.name}", user_path(@user)
+          .comments__comment__info__time
+            = comment.created_at.strftime("%Y-%m-%d %H:%M")
+  
+
+  .comment__form
+    = form_for [@team, @comment] do |f|
+      .form__box
+        = f.label :comment, "コメント" , class: "form__box__label"
+        = f.text_field :comment, class: "form__box__text-field"
+
+        = f.submit "送信", class: "form__box__btn"

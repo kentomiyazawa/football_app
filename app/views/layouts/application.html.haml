@@ -1,0 +1,32 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    %title FootballApp
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    %header
+      .header__left
+        %h1
+          = link_to "FootBall", root_path , class: "header__left__title"
+      .header__right
+        - if user_signed_in?
+          -if current_user == @user || current_user.admin?
+            .header__right__btn
+              = link_to "ログアウト", destroy_user_session_path, method: :delete
+            .header__right__btn
+              = link_to "新規チーム", new_team_path
+          - else
+            .header__right__btn
+              = link_to "ログアウト", destroy_user_session_path, method: :delete
+        - else 
+          .header__right__btn
+            = link_to "ログイン", new_user_session_path
+          .header__right__btn
+            = link_to "新規登録", new_user_registration_path
+
+
+    = yield

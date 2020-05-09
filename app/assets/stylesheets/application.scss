@@ -1,0 +1,51 @@
+@import "reset";
+@import "modules/teams";
+@import "modules/comments";
+@import "modules/users";
+
+body {
+  background: linear-gradient(-135deg, rgb(235, 235, 241), rgb(75, 74, 74));
+}
+
+header {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  background: linear-gradient( #1E00FF, #05FBFF);
+  .header__left {
+    width: 50%;
+    text-align: center;
+    line-height: 100px;
+    &__title {
+      text-decoration: none;
+      font-size: 30px;
+      color: white;
+    }
+  }
+  .header__right {
+    width: 50%;
+    padding-top: 30px;
+    padding-right: 50px;
+    &__btn {
+      background-color: white;
+      height: 40px;
+      width: 100px;
+      float: right;
+      margin-right: 50px;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 10px;
+      a{
+        display: block;
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}
+
+.main {
+  width: 900px;
+  height: calc(100vh - 100px);
+  margin: 0 auto;
+}
