@@ -176,3 +176,34 @@
   }
 }
 
+//選手一覧
+.player-lists {
+  text-align: center;
+  h1 {
+    font-size: 25px;
+    color: white;
+  }
+  &__list {
+    overflow: scroll;
+    height: 650px;
+    table {
+      margin: 0 auto;
+      overflow: scroll;
+      tr {
+        th{
+          width: 100px;
+          text-align: center;
+          border: 1px solid black;
+          color: black;
+        }
+        td{
+          width: 100px;
+          text-align: center;
+          border: 1px solid black;
+          color: white;
+        }
+      }
+    }
+  }
+}
+

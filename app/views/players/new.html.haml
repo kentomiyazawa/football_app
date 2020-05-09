@@ -1,1 +1,35 @@
-= form_for (@)
+
+.main
+  = form_for @player do |f|
+    = f.collection_select :team_ids, Team.all, :id, :name
+
+    = f.label :name, "名前"
+    = f.text_field :name
+
+    = f.label :position, "ポジション"
+    = f.select :position, [["GK", "GK"], ["DF", "DF"], ["MF", "MF"],["FW", "FW"]]
+
+    = f.label :uniform_number, "背番号"
+    = f.number_field :uniform_number
+
+    = f.label :footed, "利き足"
+    = f.select :footed,[["右利き", "right"],["左利き", "left"]]
+
+    = f.label :age, "年齢 "
+    = f.number_field :age
+
+    = f.label :height, "身長"
+    = f.number_field :height
+
+    = f.label :weight, "体重"
+    = f.number_field :weight
+
+    = f.label :nationally, "国籍"
+    = f.text_field :nationally
+
+    = f.submit "送信"
+
+  
+
+    
+
