@@ -8,6 +8,7 @@ class TeamsController < ApplicationController
     @comment = Comment.new
     @comments = @team.comments.includes(:user)
     @user = User.find(params[:id])
+    @players = @team.players
   end
 
   def new
@@ -24,6 +25,10 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
   end
 
+  def list
+    @team = Team.find(params[:id])
+    @players = @team.players
+  end
 
   private
   def team_params

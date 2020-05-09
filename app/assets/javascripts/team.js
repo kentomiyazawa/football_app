@@ -1,12 +1,12 @@
 $(function(){
 
-  $('.secret-btn').click(function(){
+  $('.detail__info__player').click(function(){
 
-    $('.detail').css('display', 'block');
-    $('.secret-btn').css('display', 'none')
+    $('.player-info').css('display', 'block');
+    $('.detail').css('display', 'none')
   });
-  $('.detail__info__back').click(function(){
-    $('.secret-btn').css('display', 'block');
-    $('.detail').css('display', 'none');
+  $('.player-info__back').click(function(){
+    $('.detail').css('display', 'block');
+    $('.player-info').css('display', 'none');
   })
 });

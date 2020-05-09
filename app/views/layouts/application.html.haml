@@ -19,6 +19,8 @@
               = link_to "ログアウト", destroy_user_session_path, method: :delete
             .header__right__btn
               = link_to "新規チーム", new_team_path
+            .header__right__btn
+              = link_to "新規選手", new_player_path
           - else
             .header__right__btn
               = link_to "ログアウト", destroy_user_session_path, method: :delete

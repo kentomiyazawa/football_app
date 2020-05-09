@@ -6,5 +6,7 @@
           = attachment_image_tag team, :image
         .teams__team__name
           = team.name.upcase
-        = link_to "コメントへ", team_path(team), class: "teams__team__message"
+        .teams__team__link  
+          = link_to "チャット", team_path(team), class: "teams__team__link__btn"
+          = link_to "選手一覧", "/teams/#{team.id}/list", class: "teams__team__link__btn"
         

@@ -9,20 +9,44 @@
   .detail__info
     = "創設年: #{@team.founding_year}年"
   .detail__info
-    .detail__info__back
-      チーム情報を非表示にする
+    .detail__info__player
+      選手一覧
 
   - if user_signed_in?
     -if current_user == @user || current_user.admin?
+      
       .detail__edit
         = link_to "チーム編集", edit_team_path(@team), class: "detail__edit__link"
+        = link_to "選手編集", "#", class: "detail__edit__link"
   
 
 
 
-.secret-btn
+.player-info
   %h2
-    チーム情報
+    選手一覧
+  .player-info__list
+    %table
+      %tr
+        %th
+          背番号
+        %th
+          ポジション
+        %th
+          選手名
+      - @players.each do |player|
+        %tr
+          %td
+            = player.uniform_number
+          %td
+            = player.position
+          %td
+            = player.name
+  .player-info__back
+    チームに戻る
+
+  
+
   
 .comments-box
   .comments
