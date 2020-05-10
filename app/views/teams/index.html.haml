@@ -7,6 +7,7 @@
         .teams__team__name
           = team.name.upcase
         .teams__team__link  
-          = link_to "チャット", team_path(team), class: "teams__team__link__btn"
-          = link_to "選手一覧", "/teams/#{team.id}/list", class: "teams__team__link__btn"
+          = link_to "チャット", "/teams/#{team.id}/chat", class: "teams__team__link__btn"
+          = link_to "選手一覧", team_path(team), class: "teams__team__link__btn"
+        
         

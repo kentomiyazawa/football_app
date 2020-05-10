@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_09_065013) do
+ActiveRecord::Schema.define(version: 2020_05_10_105506) do
+
+  create_table "blogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "comment"
@@ -20,26 +28,27 @@ ActiveRecord::Schema.define(version: 2020_05_09_065013) do
     t.integer "team_id"
   end
 
+  create_table "manegers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.date "birthday"
+    t.string "nationally"
+    t.integer "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "position"
     t.string "uniform_number"
     t.string "footed"
-    t.integer "age"
     t.integer "height"
     t.integer "weight"
     t.string "nationally"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "team_players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "team_id"
-    t.bigint "player_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["player_id"], name: "index_team_players_on_player_id"
-    t.index ["team_id"], name: "index_team_players_on_team_id"
+    t.date "birthday"
+    t.integer "team_id"
   end
 
   create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -53,8 +62,8 @@ ActiveRecord::Schema.define(version: 2020_05_09_065013) do
   end
 
   create_table "user_teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
     t.bigint "team_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["team_id"], name: "index_user_teams_on_team_id"
@@ -75,8 +84,6 @@ ActiveRecord::Schema.define(version: 2020_05_09_065013) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "team_players", "players"
-  add_foreign_key "team_players", "teams"
   add_foreign_key "user_teams", "teams"
   add_foreign_key "user_teams", "users"
 end

@@ -1,0 +1,23 @@
+//選手入力
+.player-form {
+  width: 400px;
+  margin: 0 auto;
+  &__title {
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  &__team {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  &__input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  &__submit {
+    text-align: center;
+  }
+}

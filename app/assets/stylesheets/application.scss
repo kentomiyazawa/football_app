@@ -2,6 +2,9 @@
 @import "modules/teams";
 @import "modules/comments";
 @import "modules/users";
+@import "modules/players";
+@import "modules/manegers";
+@import "modules/blogs";
 
 body {
   background: linear-gradient(-135deg, rgb(235, 235, 241), rgb(75, 74, 74));
@@ -13,7 +16,7 @@ header {
   display: flex;
   background: linear-gradient( #1E00FF, #05FBFF);
   .header__left {
-    width: 50%;
+    width: 40%;
     text-align: center;
     line-height: 100px;
     &__title {
@@ -23,7 +26,7 @@ header {
     }
   }
   .header__right {
-    width: 50%;
+    width: 60%;
     padding-top: 30px;
     padding-right: 50px;
     &__btn {

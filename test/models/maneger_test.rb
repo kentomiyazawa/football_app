@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TeamPlayerTest < ActiveSupport::TestCase
+class ManegerTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

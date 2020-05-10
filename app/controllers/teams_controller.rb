@@ -5,10 +5,8 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
-    @comment = Comment.new
-    @comments = @team.comments.includes(:user)
-    @user = User.find(params[:id])
-    @players = @team.players
+    @players = @team.players.order(:id) ##あとで確認
+    @maneger = @team.maneger
   end
 
   def new
@@ -25,8 +23,16 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
   end
 
-  def list
+  def update
     @team = Team.find(params[:id])
+    @team.update(team_params)
+    redirect_to root_path
+  end
+
+  def chat
+    @team = Team.find(params[:id])
+    @comment = Comment.new
+    @comments = @team.comments.includes(:user)
     @players = @team.players
   end
 

@@ -1,70 +1,75 @@
+.main
+  .team-lists
+    %h1
+      = @team.name.upcase
+    .team-lists__list
+      .team-lists__list__player
+        %h1
+          選手
+        %table
+          %tr
+            %th
+              背番号
+            %th
+              ポジション
+            %th
+              選手名
+            %th
+              年齢 
+            %th
+              利き足
+            %th
+              身長
+            %th
+              体重
+            %th
+              国籍
+          - @players.each do |player|
+            %tr
+              %td
+                = player.uniform_number
+              %td
+                = player.position
+              %td
+                = player.name.capitalize
+              %td
+                = player.birthday.strftime("%Y年%m月%d日")
+              %td
+                = player.footed
+              %td
+                = "#{player.height}cm"
+              %td
+                = "#{player.weight}kg"
+              %td
+                = player.nationally.capitalize
+              - if user_signed_in?
+                -if current_user == @user || current_user.admin?
+                  %td.team-lists__list__player__edit
+                    = link_to "編集", edit_player_path(player)
+                  %td.team-lists__list__player__edit
+                    = link_to "削除", player_path(player), method: :delete
 
-.detail 
-  .datail__info
-    = "チーム名: #{@team.name.upcase}"
-  .detail__info
-    = "ホームタウン: #{@team.home.upcase}"
-  .detail__info
-    = "スタジアム: #{@team.stadium.upcase}"
-  .detail__info
-    = "創設年: #{@team.founding_year}年"
-  .detail__info
-    .detail__info__player
-      選手一覧
-
-  - if user_signed_in?
-    -if current_user == @user || current_user.admin?
-      
-      .detail__edit
-        = link_to "チーム編集", edit_team_path(@team), class: "detail__edit__link"
-        = link_to "選手編集", "#", class: "detail__edit__link"
-  
-
-
-
-.player-info
-  %h2
-    選手一覧
-  .player-info__list
-    %table
-      %tr
-        %th
-          背番号
-        %th
-          ポジション
-        %th
-          選手名
-      - @players.each do |player|
-        %tr
-          %td
-            = player.uniform_number
-          %td
-            = player.position
-          %td
-            = player.name
-  .player-info__back
-    チームに戻る
-
-  
-
-  
-.comments-box
-  .comments
-    - @comments.each do |comment|
-      .comments__comment
-        .comments__comment__text
-          = simple_format comment.comment
-        .comments__comment__info
-          .comments__comment__info__name
-            = link_to "#{comment.user.name}", user_path(@user)
-          .comments__comment__info__time
-            = comment.created_at.strftime("%Y-%m-%d %H:%M")
-  
-
-  .comment__form
-    = form_for [@team, @comment] do |f|
-      .form__box
-        = f.label :comment, "コメント" , class: "form__box__label"
-        = f.text_field :comment, class: "form__box__text-field"
-
-        = f.submit "送信", class: "form__box__btn"
+      .team-lists__list__maneger
+        %h1
+          監督
+        %table
+          %tr
+            %th
+              名前
+            %th
+              誕生日
+            %th
+              国籍
+          %tr
+            %td
+              = @team.maneger.name.capitalize
+            %td
+              = @team.maneger.birthday.strftime("%Y年%m月%d日")
+            %td
+              = @team.maneger.nationally.capitalize
+            - if user_signed_in?
+              -if current_user == @user || current_user.admin?
+                %td.team-lists__list__maneger__edit
+                  = link_to "編集", edit_maneger_path(@maneger)
+                %td.team-lists__list__maneger__edit
+                  = link_to "削除", maneger_path(@maneger), method: :delete

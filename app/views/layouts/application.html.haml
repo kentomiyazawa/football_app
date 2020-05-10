@@ -18,17 +18,25 @@
             .header__right__btn
               = link_to "ログアウト", destroy_user_session_path, method: :delete
             .header__right__btn
+              = link_to "ブログ一覧", blogs_path
+            .header__right__btn
               = link_to "新規チーム", new_team_path
             .header__right__btn
               = link_to "新規選手", new_player_path
+            .header__right__btn
+              = link_to "新規監督", new_maneger_path
           - else
             .header__right__btn
               = link_to "ログアウト", destroy_user_session_path, method: :delete
+            .header__right__btn
+              = link_to "ブログ一覧", blogs_path
         - else 
           .header__right__btn
             = link_to "ログイン", new_user_session_path
           .header__right__btn
             = link_to "新規登録", new_user_registration_path
+          .header__right__btn
+            = link_to "ブログ一覧", blogs_path
 
 
     = yield

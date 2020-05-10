@@ -1,0 +1,14 @@
+.main
+  .blogs
+    %h1
+      ブログ一覧
+    .blogs__blog
+      - @blogs.each do |blog|
+        .blogs__blog__title
+          = blog.title
+        .blogs__blog__user
+          = blog.user.name
+        .blogs__blog__create
+          = blog.created_at.strftime("%Y年%m月%d日")
+        .blogs__blog__like
+          いいね
