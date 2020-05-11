@@ -13,7 +13,7 @@
     border: 1px solid black;
     margin-bottom: 20px;
     border-radius: 10px;
-    background-color: white;
+    background-color: #F2F2F2;
     &__name {
       font-size: 20px;
     }
@@ -41,24 +41,29 @@
   width: 800px;
   height: calc(100vh - 100px);
   margin-left: 350px;
+  border: 1px solid black;
+  border-radius: 10px;
   .comments {
     width: 100%;
     height: calc(100% - 80px);
     overflow: scroll;
+    background-color: #F2F2F2;
     &__comment {
       border-radius: 5px;
-      background-color: white;
       align-items: center;
       margin: 10px auto;
       width: 750px; 
       display: flex;
       justify-content: space-between;
+      border: 1px solid black;
+      background-color: white;
     }
   }
 
   .comment__form {
     width: 100%;
     height: 80px;
+    background-color: #F2F2F2;
     .new_comment {
       height: 100%;
       .form__box{
@@ -90,10 +95,11 @@
   width: 300px;
   height: 600px;
   float: left;
-  color: white;
+  border: 1px solid black;
   text-align: center;
   position: absolute;
-  background-color: black;
+  background-color: #F2F2F2;
+  border-radius: 10px;
   &__info {
     margin-top: 10px;
     &__player {
@@ -106,6 +112,7 @@
       background-color: white;
       border-radius: 10px;
       cursor: pointer;
+      border: 1px solid black;
     }
   }
   &__edit {
@@ -118,9 +125,10 @@
       width: 100px;
       height: 50px;
       line-height: 50px;
-      background-color: white;
       display: block;
       border-radius: 10px;
+      border: 1px solid black;
+      background-color: white;
     }
   }
 }
@@ -132,11 +140,13 @@
   width: 300px;
   height: 600px;
   float: left;
-  color: white;
+  color: black;
   text-align: center;
   position: absolute;
-  background-color: black;
   display: none;
+  background-color: #F2F2F2;
+  border-radius: 10px;
+  border: 1px solid black;
   &__list{
     width: 280px;
     height: 500px;
@@ -149,9 +159,10 @@
     width: 100px;
     height: 50px;
     line-height: 50px;
-    background-color: white;
     border-radius: 10px;
     cursor: pointer;
+    border: 1px solid black;
+    background-color: white;
   }
 }
 
@@ -161,11 +172,12 @@
   margin: 0px auto;
   border: 1px solid black;
   border-radius: 5px;
+  background-color: #F2F2F2;
   &__title {
     font-size: 25px;
     text-align: center;
     margin-bottom: 10px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid black;
   }
   &__team {
     text-align: center;
@@ -184,25 +196,25 @@
 //選手一覧
 .team-lists {
   text-align: center;
-  background-color: white;
+  border: 1px solid black;
   border-radius: 10px;
+  background-color: #F2F2F2; 
   h1 {
     font-size: 25px;
+    background-color: #F2F2F2;
   }
   &__list {
     overflow: scroll;
     height: 650px;
     width: 1000px;
     border-top: 1px solid black;
-    background-color: gray;
     margin: 0 auto;
-    color: white;
     &__player {
       &__edit {
-        background-color: white;
+        background-color: black;
         > a{
           text-decoration: none;
-          color: black;
+          color: white;
         }
       }
       table {
@@ -213,7 +225,6 @@
             padding: 5px;
             text-align: center;
             border: 1px solid black;
-            color: white;
           }
           td{
             padding: 5px;
@@ -225,10 +236,10 @@
     }
     &__maneger {
       &__edit {
-        background-color: white;
+        background-color: black;
         > a{
           text-decoration: none;
-          color: black;
+          color: white;
         }
       }
       table {
@@ -240,7 +251,6 @@
             width: 150px;
             text-align: center;
             border: 1px solid black;
-            color: white;
           }
           td{
             padding: 5px;
