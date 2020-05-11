@@ -8,5 +8,7 @@ class User < ApplicationRecord
   has_many :teams, through: :user_teams
   has_many :blogs
   has_many :blogcomments
+  has_many :likes, dependent: :destroy
+  has_many :liked_blogs, through: :likes, source: :blog
   validates :name, presence: true, uniqueness: true       
 end

@@ -19,7 +19,7 @@
             = link_to("/likes/#{@blog.id}/create", method: :post) do
               %span.far.fa-thumbs-up.blog__info__like__icon__none
         .blog__info__like__num
-          = @likes_count
+          = "#{@likes_count}いいね！"
       - if user_signed_in? && current_user.id == @blog.user_id
         = link_to "編集", edit_blog_path(@blog), class: "blog__info__edit"
         = link_to "削除", blog_path, method: :delete,  class: "blog__info__delete"
@@ -32,8 +32,7 @@
           .blog--comments__box__comment__text
             = blogcomment.text
           .blog--comments__box__comment__info
-            .blog--comments__box__comment__info__name
-              = blogcomment.user.name
+            =link_to blogcomment.user.name, user_path(blogcomment.user), class: "blog--comments__box__comment__info__name"
             .blog--comments__box__comment__info__time
               = blogcomment.created_at.strftime("%Y年%m月%d日")
     .blog--comments__form

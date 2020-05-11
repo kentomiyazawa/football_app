@@ -17,7 +17,7 @@
           .user-blogs__list__blog
             = link_to blog.title, blog_path(blog), class: "user-blogs__list__blog__title"
             .user-blogs__list__blog__like
-              いいね
+              = "#{blog.liked_users.count}いいね!"
       - else 
         %p
           投稿はありません。
