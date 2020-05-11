@@ -8,6 +8,7 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
     @blogcomment = Blogcomment.new
     @blogcomments = @blog.blogcomments.includes(:user)
+    @likes_count = Like.where(blog_id: @blog.id).count
   end
 
   def new
