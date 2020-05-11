@@ -1,0 +1,11 @@
+= form_for @blog do |f|
+  .blog-form__input
+    = f.label :title, "タイトル"
+    = f.text_field :title
+
+  .blog-form__input
+    = f.label :text, "テキスト"
+    = f.text_area :text, size: "40x20"
+
+  .blog-form__submit
+    = f.submit "送信"

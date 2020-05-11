@@ -1,9 +1,26 @@
 .main
   .user-info
     .user-info__name
-      = @user.name
+      = "#{@user.name}さんのページ"
+    .user-info__profile
+      - if @user.profile.present?
+        = simple_format @user.profile
+      - else 
+        %p
+          プロフィールが設定されていません。 
   .user-blogs
     %h1
       = "#{@user.name}さんのブログ"
-    .user-blogs__blog
-      ブログ一覧
+    .user-blogs__list
+      -if @user.blogs.present?
+        - @user.blogs.each do |blog|
+          .user-blogs__list__blog
+            = link_to blog.title, blog_path(blog), class: "user-blogs__list__blog__title"
+            .user-blogs__list__blog__like
+              いいね
+      - else 
+        %p
+          投稿はありません。
+  - if current_user.id == @user.id
+    .user-edit-btn
+      = link_to "プロフィール編集", edit_user_path(@user)

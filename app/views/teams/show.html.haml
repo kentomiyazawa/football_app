@@ -3,73 +3,80 @@
     %h1
       = @team.name.upcase
     .team-lists__list
-      .team-lists__list__player
-        %h1
-          選手
-        %table
-          %tr
-            %th
-              背番号
-            %th
-              ポジション
-            %th
-              選手名
-            %th
-              年齢 
-            %th
-              利き足
-            %th
-              身長
-            %th
-              体重
-            %th
-              国籍
-          - @players.each do |player|
+      - if @players.present?
+        .team-lists__list__player
+          %h1
+            選手
+          %table
+            %tr
+              %th
+                背番号
+              %th
+                ポジション
+              %th
+                選手名
+              %th
+                年齢 
+              %th
+                利き足
+              %th
+                身長
+              %th
+                体重
+              %th
+                国籍
+            - @players.each do |player|
+              %tr
+                %td
+                  = player.uniform_number
+                %td
+                  = player.position
+                %td
+                  = player.name.capitalize
+                %td
+                  = player.birthday.strftime("%Y年%m月%d日")
+                %td
+                  = player.footed
+                %td
+                  = "#{player.height}cm"
+                %td
+                  = "#{player.weight}kg"
+                %td
+                  = player.nationally.capitalize
+                - if user_signed_in?
+                  -if current_user == @user || current_user.admin?
+                    %td.team-lists__list__player__edit
+                      = link_to "編集", edit_player_path(player)
+                    %td.team-lists__list__player__edit
+                      = link_to "削除", player_path(player), method: :delete
+      - else
+        %p
+          選手データ準備中です。少々お待ちください。
+      - if @maneger.present?
+        .team-lists__list__maneger
+          %h1
+            監督
+          %table
+            %tr
+              %th
+                名前
+              %th
+                誕生日
+              %th
+                国籍
             %tr
               %td
-                = player.uniform_number
+                = @team.maneger.name.capitalize
               %td
-                = player.position
+                = @team.maneger.birthday.strftime("%Y年%m月%d日")
               %td
-                = player.name.capitalize
-              %td
-                = player.birthday.strftime("%Y年%m月%d日")
-              %td
-                = player.footed
-              %td
-                = "#{player.height}cm"
-              %td
-                = "#{player.weight}kg"
-              %td
-                = player.nationally.capitalize
+                = @team.maneger.nationally.capitalize
               - if user_signed_in?
                 -if current_user == @user || current_user.admin?
-                  %td.team-lists__list__player__edit
-                    = link_to "編集", edit_player_path(player)
-                  %td.team-lists__list__player__edit
-                    = link_to "削除", player_path(player), method: :delete
-
-      .team-lists__list__maneger
-        %h1
-          監督
-        %table
-          %tr
-            %th
-              名前
-            %th
-              誕生日
-            %th
-              国籍
-          %tr
-            %td
-              = @team.maneger.name.capitalize
-            %td
-              = @team.maneger.birthday.strftime("%Y年%m月%d日")
-            %td
-              = @team.maneger.nationally.capitalize
-            - if user_signed_in?
-              -if current_user == @user || current_user.admin?
-                %td.team-lists__list__maneger__edit
-                  = link_to "編集", edit_maneger_path(@maneger)
-                %td.team-lists__list__maneger__edit
-                  = link_to "削除", maneger_path(@maneger), method: :delete
+                  %td.team-lists__list__maneger__edit
+                    = link_to "編集", edit_maneger_path(@maneger)
+                  %td.team-lists__list__maneger__edit
+                    = link_to "削除", maneger_path(@maneger), method: :delete
+      - else
+        %p
+          監督データ準備中です。少々お待ちください。

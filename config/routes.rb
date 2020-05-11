@@ -3,10 +3,12 @@ Rails.application.routes.draw do
   root to: "teams#index"
 
   get '/teams/:id/chat', to: 'teams#chat'
-  resources :users, only: :show
+  resources :users
   resources :manegers
   resources :players
-  resources :blogs
+  resources :blogs do
+    resources :blogcomments, only: :create
+  end
   resources :teams do
     resources :comments, only: :create
   end

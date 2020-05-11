@@ -1,0 +1,15 @@
+.main
+  .user-form
+    %h1.user-form__title
+      ユーザー情報
+    = form_for @user do |f|
+      .user-form__input
+        = f.label :name, "名前"
+        = f.text_field :name
+
+      .user-form__input
+        = f.label :profile, "自己紹介"
+        = f.text_area :profile, size: "40x20"
+
+      .user-form__submit
+        = f.submit "送信"

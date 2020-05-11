@@ -66,3 +66,4 @@ gem "refile-mini_magick"
 gem 'devise'
 gem 'jquery-rails'
 gem 'pry-rails'
+gem 'kaminari'

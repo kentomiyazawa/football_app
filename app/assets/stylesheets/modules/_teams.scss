@@ -156,34 +156,47 @@
 }
 
 //フォーム
-.team-form{
-  height: 100%;
+.team-form {
   width: 400px;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  &__box{
-    margin-top: 20px;
-    height: 30px;
+  margin: 0px auto;
+  border: 1px solid black;
+  border-radius: 5px;
+  &__title {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid white;
+  }
+  &__team {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  &__input {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
   }
   &__submit {
     text-align: center;
-    margin-top: 20px;
   }
 }
 
 //選手一覧
 .team-lists {
   text-align: center;
+  background-color: white;
+  border-radius: 10px;
   h1 {
     font-size: 25px;
-    color: white;
   }
   &__list {
     overflow: scroll;
     height: 650px;
+    width: 1000px;
+    border-top: 1px solid black;
+    background-color: gray;
+    margin: 0 auto;
+    color: white;
     &__player {
       &__edit {
         background-color: white;
@@ -200,13 +213,12 @@
             padding: 5px;
             text-align: center;
             border: 1px solid black;
-            color: black;
+            color: white;
           }
           td{
             padding: 5px;
             text-align: center;
             border: 1px solid black;
-            color: white;
           }
         }
       }
@@ -224,15 +236,16 @@
         overflow: scroll;
         tr {
           th{
+            padding: 5px;
             width: 150px;
             text-align: center;
             border: 1px solid black;
-            color: black;
+            color: white;
           }
           td{
+            padding: 5px;
             text-align: center;
             border: 1px solid black;
-            color: white;
           }
         }
       }

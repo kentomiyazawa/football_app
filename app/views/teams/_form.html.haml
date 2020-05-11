@@ -1,27 +1,27 @@
-.main
-  .team-form  
-    = form_for @team do |f|
-      .team-form__box
-        = f.label :name, "チーム名"
-        = f.text_field :name
 
-      .team-form__box
-        = f.label :home, "本拠地"
-        = f.text_field :home
 
-      .team-form__box
-        = f.label :stadium, "スタジアム"
-        = f.text_field :stadium
+= form_for @team do |f|
+  .team-form__input
+    = f.label :name, "チーム名"
+    = f.text_field :name
 
-      .team-form__box
-        = f.label :founding_year, "創設年"
-        = f.text_field :founding_year
+  .team-form__input
+    = f.label :home, "本拠地"
+    = f.text_field :home
 
-      .team-form__box
-        = f.label :image, "ロゴ画像"
-        = f.attachment_field :image
+  .team-form__input
+    = f.label :stadium, "スタジアム"
+    = f.text_field :stadium
 
-      .team-form__submit
-        = f.submit '送信', class: "new-form__submit__btn"
+  .team-form__input
+    = f.label :founding_year, "創設年"
+    = f.text_field :founding_year
+
+  .team-form__input
+    = f.label :image, "ロゴ画像"
+    = f.attachment_field :image
+
+  .team-form__submit
+    = f.submit '送信', class: "new-form__submit__btn"
 
    

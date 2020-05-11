@@ -6,19 +6,16 @@
 @import "modules/manegers";
 @import "modules/blogs";
 
-body {
-  background: linear-gradient(-135deg, rgb(235, 235, 241), rgb(75, 74, 74));
-}
 
 header {
-  height: 100px;
+  height: 80px;
   width: 100%;
   display: flex;
-  background: linear-gradient( #1E00FF, #05FBFF);
+  background: linear-gradient( #05FBFF, #1E00FF);
   .header__left {
-    width: 40%;
+    width: 20%;
     text-align: center;
-    line-height: 100px;
+    line-height: 80px;
     &__title {
       text-decoration: none;
       font-size: 30px;
@@ -26,8 +23,8 @@ header {
     }
   }
   .header__right {
-    width: 60%;
-    padding-top: 30px;
+    width: 80%;
+    padding-top: 15px;
     padding-right: 50px;
     &__btn {
       background-color: white;
@@ -49,6 +46,6 @@ header {
 
 .main {
   width: 1100px;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 80px);
   margin: 0 auto;
 }

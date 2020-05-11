@@ -4,25 +4,29 @@
   height: 650px;
   margin: 0 auto;
   text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
   h1{
-    color: white;
-    font-size: 20px;
+    font-size: 25px;
   }
   &__list {
     height: 600px;
     overflow: scroll;
     background-color: white;
+    border-radius: 10px;
     &__blog {
       width: 750px;
       height: 100px;
       display: flex;
       margin: 10px auto 0px auto;
-      background-color: skyblue;
+      background-color: gray;
+      color: white;
+      border-radius: 5px;
       &__title {
         width: 50%;
         line-height: 100px;
         > a{
-          color: black;
+          color:white;
         }
       }
       &__info {
@@ -32,10 +36,95 @@
         justify-content: space-around;
         &__user {
           > a{
-            color: black;
+            color: white;
           }
         }
       }
     }
+  }
+}
+
+//ブログ詳細
+.blog {
+  display: flex;
+  &__main {
+    width: 800px;
+    height: 400px;
+    margin-left: 100px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    &__title {
+      font-size: 25px;
+      text-align: center;
+      color: black;
+      border-bottom: 1px solid gray;
+    }
+  }
+  &__info {
+    background-color: snow;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+  }
+}
+.blog--comments {
+  width: 800px;
+  height: 270px;
+  margin-left: 100px;
+  margin-bottom: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  h1 {
+    color: white;
+    text-align: center;
+  }
+  &__box {
+    height: 80%;
+    overflow: scroll;
+    &__comment {
+      display: flex;
+      background-color: gray;
+      justify-content: space-between;
+      width: 750px;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      background-color: white;
+    }
+  }
+  &__form {
+    margin-top: 5px;
+    height: 20%;
+    text-align: center;
+  }
+}
+
+//フォーム
+.blog-form {
+  width: 400px;
+  margin: 0px auto;
+  border: 1px solid black;
+  border-radius: 5px;
+  &__title {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid white;
+  }
+  &__team {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  &__input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    text-align: center;
+
+  }
+  &__submit {
+    text-align: center;
   }
 }
