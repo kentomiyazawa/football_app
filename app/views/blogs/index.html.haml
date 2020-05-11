@@ -13,5 +13,5 @@
             .blogs__list__blog__info__create
               = blog.created_at.strftime("%Y年%m月%d日")
             .blogs__list__blog__info__like
-              いいね
+              = "#{blog.liked_users.count}いいね！"
 

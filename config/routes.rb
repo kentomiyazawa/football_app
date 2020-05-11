@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: "teams#index"
 
   get '/teams/:id/chat', to: 'teams#chat'
+  post "likes/:blog_id/create" => "likes#create"
+  post "likes/:blog_id/destroy" => "likes#destroy"
   resources :users
   resources :manegers
   resources :players

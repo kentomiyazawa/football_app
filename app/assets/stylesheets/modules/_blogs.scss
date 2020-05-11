@@ -60,14 +60,45 @@
       color: black;
       border-bottom: 1px solid gray;
     }
+    &__contents {
+      width: 800px;
+      height: 355px;
+      overflow: scroll;
+    }
   }
+  //右のナヴィ
   &__info {
-    background-color: snow;
     width: 200px;
     height: 200px;
     border-radius: 10px;
+    border: 1px solid black;
+    margin-left: 5px;
+    text-align: center;
+    &__name {
+      color: black;
+      margin-bottom: 5px;
+    }
+    &__create{
+      margin-bottom: 5px;
+    }
+    &__like {
+      display: flex;
+      justify-content: space-around;
+    }
   }
 }
+.blog__info__like__icon__already {
+  font-size: 20px;
+  color: red;
+}
+
+.blog__info__like__icon__none {
+  font-size: 20px;
+  color: black;
+  opacity: 0.5;
+}
+
+
 .blog--comments {
   width: 800px;
   height: 270px;
@@ -77,11 +108,12 @@
   border-radius: 10px;
   padding-bottom: 10px;
   h1 {
-    color: white;
+    color: black;
     text-align: center;
   }
   &__box {
     height: 80%;
+    border-top: 1px solid black;
     overflow: scroll;
     &__comment {
       display: flex;
@@ -92,6 +124,11 @@
       margin-bottom: 10px;
       border-radius: 5px;
       background-color: white;
+      &__info {
+        &__name {
+          color: black;
+        }
+      }
     }
   }
   &__form {
