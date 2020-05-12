@@ -5,6 +5,7 @@
 @import "modules/players";
 @import "modules/manegers";
 @import "modules/blogs";
+@import "modules/homes";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
@@ -44,10 +45,12 @@ header {
         background-color: black;
         display: none;
         border-top: 1px solid white;
+        z-index: 2;
         &__content {
           text-decoration: none;
           color: white;
           display: block;
+          z-index: 3;
         }
       }
     }
