@@ -50,7 +50,7 @@
 .comments-box
   .comments
     - @comments.each do |comment|
-      .comments__comment
+      .comments__comment{data: {comment: {id: comment.id}}}
         .comments__comment__text
           = comment.comment
         .comments__comment__info
