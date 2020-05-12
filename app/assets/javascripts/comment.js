@@ -1,7 +1,8 @@
 $(function(){
 
+
   function buildHTML(comment){
-    var html = `<div class="comments__comment">
+    var html = `<div class="comments__comment" data-comment-id=${comment.id}>
                   <div class="comments__comment__text">
                     <p> ${comment.comment} </p>
                   </div>
@@ -16,6 +17,28 @@ $(function(){
                 </div>`
               return html;
   }
+  var reloadComments = function(){
+    var last_comment_id = $('.comments__comment:last').data("comment-id");
+    $.ajax({
+      url: "api/comments",
+      type: 'GET',
+      dataType: 'json',
+      data: {id: last_comment_id}
+    })
+    .done(function(comments){
+      if (comments.length !== 0) {
+      var insertHTML ='';
+      $.each(comments, function(i, comment){
+        insertHTML += buildHTML(comment)
+      });
+      $('.comments').append(insertHTML);
+      $('.comments').animate({ scrollTop: $('.comments')[0].scrollHeight});
+      }
+    })
+    .fail(function(){
+      alert('error');
+    });
+  };
 
   $('#new_comment').on('submit', function(e){
     e.preventDefault();
@@ -40,4 +63,9 @@ $(function(){
       alert('error');
     })
   })
+
+
+  if (document.location.href.match(/\/teams\/\d+\/chat/)) {
+    setInterval(reloadComments, 7000);
+  }
 });
