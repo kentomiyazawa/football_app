@@ -5,7 +5,7 @@ class PlayersController < ApplicationController
 
   def create
     @player = Player.create(player_params)
-    redirect_to root_path
+    redirect_to teams_path
   end
 
   def edit
@@ -15,13 +15,13 @@ class PlayersController < ApplicationController
   def update
     @player = Player.find(params[:id])
     @player.update(player_params)
-    redirect_to root_path
+    redirect_to teams_path
   end
 
   def destroy
     player = Player.find(params[:id])
     player.destroy
-    redirect_to root_path
+    redirect_to teams_path
   end
 
   private

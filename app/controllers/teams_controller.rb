@@ -5,7 +5,7 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
-    @players = @team.players.order(:id) ##あとで確認
+    @players = @team.players.order(:uniform_number)
     @maneger = @team.maneger
   end
 
