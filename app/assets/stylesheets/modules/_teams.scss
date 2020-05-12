@@ -203,10 +203,12 @@
   h1 {
     font-size: 25px;
     background-color: #F2F2F2;
+    width: 400px;
+    margin: 0 auto;
   }
   &__list {
     overflow: scroll;
-    height: 650px;
+    height: 648px;
     width: 1000px;
     border-top: 1px solid black;
     margin: 0 auto;
