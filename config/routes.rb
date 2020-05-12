@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "homes#index"
+  root to: "teams#index"
 
   get '/teams/:id/chat', to: 'teams#chat'
   post "likes/:blog_id/create" => "likes#create"

@@ -1,7 +1,10 @@
 class BlogcommentsController < ApplicationController
   def create
     @blogcomment = Blogcomment.create(blogcomment_params)
-    redirect_to "/blogs/#{@blogcomment.blog.id}"
+    respond_to do |format|
+      format.html { redirect_to "/blogs/#{@blogcomment.blog.id}" }
+      format.json
+    end
   end
 
   private

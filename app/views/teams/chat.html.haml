@@ -52,7 +52,7 @@
     - @comments.each do |comment|
       .comments__comment
         .comments__comment__text
-          = simple_format comment.comment
+          = comment.comment
         .comments__comment__info
           .comments__comment__info__name
             = link_to "#{comment.user.name}", user_path(comment.user)
