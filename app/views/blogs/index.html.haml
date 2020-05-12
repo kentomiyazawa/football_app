@@ -7,16 +7,16 @@
         = f.label :title_cont, "ブログ検索"
         = f.search_field :title_cont
         = f.submit "検索"
-      .blogs__list
-        - @results.zip(@blogs) do |result, blog|
-          .blogs__list__blog
-            .blogs__list__blog__title
-              = link_to result.title, blog_path(blog)
-            .blogs__list__blog__info
-              .blogs__list__blog__info__user
-                = link_to result.user.name, user_path(blog.user)
-              .blogs__list__blog__info__create
-                = result.created_at.strftime("%Y年%m月%d日")
-              .blogs__list__blog__info__like
-                = "#{result.liked_users.count}いいね！"
+    .blogs__list
+      - @results.zip(@blogs) do |result, blog|
+        .blogs__list__blog
+          .blogs__list__blog__title
+            = link_to result.title, blog_path(blog)
+          .blogs__list__blog__info
+            .blogs__list__blog__info__user
+              = link_to result.user.name, user_path(blog.user)
+            .blogs__list__blog__info__create
+              = result.created_at.strftime("%Y年%m月%d日")
+            .blogs__list__blog__info__like
+              = "#{result.liked_users.count}いいね！"
 
