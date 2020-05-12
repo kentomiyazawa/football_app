@@ -2,16 +2,21 @@
   .blogs
     %h1
       ブログ一覧
-    .blogs__list
-      - @blogs.each do |blog|
-        .blogs__list__blog
-          .blogs__list__blog__title
-            = link_to blog.title, blog_path(blog)
-          .blogs__list__blog__info
-            .blogs__list__blog__info__user
-              = link_to blog.user.name, user_path(blog.user)
-            .blogs__list__blog__info__create
-              = blog.created_at.strftime("%Y年%m月%d日")
-            .blogs__list__blog__info__like
-              = "#{blog.liked_users.count}いいね！"
+    .blog__search
+      = search_form_for @search do |f|
+        = f.label :title_cont, "ブログ検索"
+        = f.search_field :title_cont
+        = f.submit "検索"
+      .blogs__list
+        - @results.zip(@blogs) do |result, blog|
+          .blogs__list__blog
+            .blogs__list__blog__title
+              = link_to result.title, blog_path(blog)
+            .blogs__list__blog__info
+              .blogs__list__blog__info__user
+                = link_to result.user.name, user_path(blog.user)
+              .blogs__list__blog__info__create
+                = result.created_at.strftime("%Y年%m月%d日")
+              .blogs__list__blog__info__like
+                = "#{result.liked_users.count}いいね！"
 

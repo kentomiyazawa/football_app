@@ -2,6 +2,8 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.all
+    @search = Blog.ransack(params[:q])
+    @results = @search.result(distinct: true)
   end
 
   def show
