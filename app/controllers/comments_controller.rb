@@ -2,7 +2,10 @@ class CommentsController < ApplicationController
   
   def create
     @comment = Comment.create(comment_params)
-    redirect_to "/teams/#{@comment.team.id}/chat"
+    respond_to do |format|
+      format.html {  redirect_to "/teams/#{@comment.team.id}/chat" }
+      format.json
+    end
   end
 
   private
