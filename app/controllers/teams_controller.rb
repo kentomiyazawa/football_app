@@ -18,7 +18,7 @@ class TeamsController < ApplicationController
 
   def create
     @team = Team.create(team_params)
-    redirect_to teams_path(@team)
+    redirect_to teams_path(@team), notice: 'チームを登録しました！'
   end
 
   def edit
@@ -28,14 +28,14 @@ class TeamsController < ApplicationController
   def update
     @team = Team.find(params[:id])
     @team.update(team_params)
-    redirect_to root_path
+    redirect_to root_path, notice: 'チームを更新しました！'
   end
 
   def chat
     @team = Team.find(params[:id])
     @comment = Comment.new
     @comments = @team.comments.includes(:user)
-    @players = @team.players
+    @players = @team.players.order(uniform_number: :ASC)
   end
 
   private

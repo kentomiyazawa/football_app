@@ -8,7 +8,7 @@ class ManegersController < ApplicationController
 
   def create
     @maneger = Maneger.create(maneger_params)
-    redirect_to root_path
+    redirect_to root_path, notice: '監督を登録しました!'
   end
 
   def edit
@@ -18,7 +18,7 @@ class ManegersController < ApplicationController
   def update
     @maneger = Maneger.find(params[:id])
     Maneger.update(maneger_params)
-    redirect_to root_path
+    redirect_to root_path, notice: '監督を更新しました!'
   end
 
   def destroy

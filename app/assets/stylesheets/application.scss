@@ -16,13 +16,14 @@ header {
   display: flex;
   background-color: #89BDDE;
   .header__left {
-    width: 80%;
-    text-align: center;
+    width: 55%;
+    text-align: right;
     line-height: 80px;
     &__title {
       text-decoration: none;
       font-size: 30px;
       color: white;
+      font-family: cursive;
     }
   }
 
@@ -58,4 +59,8 @@ header {
   width: 1100px;
   height: calc(100vh - 80px);
   margin: 0 auto;
+}
+.notificication {
+  text-align: center;
+  background-color: tomato;
 }

@@ -8,7 +8,7 @@ class PlayersController < ApplicationController
 
   def create
     @player = Player.create(player_params)
-    redirect_to teams_path
+    redirect_to teams_path, notice: '選手を登録しました!'
   end
 
   def edit
@@ -18,7 +18,7 @@ class PlayersController < ApplicationController
   def update
     @player = Player.find(params[:id])
     @player.update(player_params)
-    redirect_to teams_path
+    redirect_to teams_path, notice: '選手を更新しました!'
   end
 
   def destroy
