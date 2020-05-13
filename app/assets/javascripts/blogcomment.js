@@ -1,7 +1,7 @@
 $(function(){
 
   function buildHTML(blogcomment){
-    var html = `<div class="blog--comments__box__comment" data-blogcomment-id=${blogcomment.id}>
+    var html = `<div class="blog--comments__box__comment">
                   <div class="blog--comments__box__comment__text">
                     ${blogcomment.text}
                   </div>
@@ -15,30 +15,6 @@ $(function(){
     `
     return html;
   }
-
-  var reloadBlogcomments = function(){
-    var last_blogcomment_id = $('.blog--comments__box__comment:last').data("blogcomment-id");
-    $.ajax({
-      url: "/blogs/blog/api/blogcomments",
-      type: 'get',
-      dataType: 'json',
-      data: {id: last_blogcomment_id}
-    })
-    .done(function(blogcomments){
-      if (blogcomments.length !== 0){
-      var insertHTML = "";
-      $.each(blogcomments, function(i, blogcomment){
-        insertHTML += buildHTML(blogcomment)
-      });
-      $('.blog--comments__box').append(insertHTML);
-      $('.blog--comments__box').animate({ scrollTop: $('.blog--comments__box')[0].scrollHeight});
-     }
-    })
-    .fail(function() {
-      alert('error');
-    });
-  };
-
 
   $('#new_blogcomment').on('submit', function(e){
     e.preventDefault();
@@ -63,7 +39,4 @@ $(function(){
       alert('error');
     })
   })
-  if (document.location.href.match(/\/blogs\/\d+/)) {
-  setInterval(reloadBlogcomments, 7000);
-  }
 })
