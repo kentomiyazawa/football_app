@@ -8,63 +8,60 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
+    = render 'layouts/notifications'
     %header
       .header__left
         %h1
           = link_to "FootBall", root_path , class: "header__left__title"
-      .header__right
-        - if user_signed_in?
-          -if current_user == @user || current_user.admin?
-            %ul.droppdown
-              Menu
-              %li.droppdown__li
-                = link_to "トップ画面", root_path, class: "droppdown__li__content"
-              %li.droppdown__li
-                = link_to "マイページ",user_path(current_user.id), class: "droppdown__li__content"
-              %li.droppdown__li
-                = link_to "チャット画面", teams_path, class: "droppdown__li__content"
-              %li.droppdown__li
-                = link_to "ブログ一覧", blogs_path, class: "droppdown__li__content"
-              %li.droppdown__li
-                = link_to "ブログ投稿", new_team_path, class: "droppdown__li__content"
-              %li.droppdown__li
-                = link_to "新規チーム", new_blog_path, class: "droppdown__li__content"
-              %li.droppdown__li
-                = link_to "新規選手", new_player_path, class: "droppdown__li__content"
-              %li.droppdown__li
-                = link_to "新規監督", new_maneger_path, class: "droppdown__li__content"
-              %li.droppdown__li
-                = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "droppdown__li__content"
-          - else
-            %ul.droppdown
-              Menu
-              %li.droppdown__li
-                = link_to "トップ画面", root_path, class: "droppdown__li__content"
-              %li.droppdown__li
-                = link_to "マイページ",user_path(current_user.id), class: "droppdown__li__content"
-              %li.droppdown__li
-                = link_to "チャット画面", teams_path, class: "droppdown__li__content"
-              %li.droppdown__li
-                = link_to "ブログ一覧", blogs_path, class: "droppdown__li__content"
-              %li.droppdown__li
-                = link_to "ブログ投稿", new_blog_path, class: "droppdown__li__content"
-              %li.droppdown__li
-                = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "droppdown__li__content"
-        - else 
+   
+      - if user_signed_in?
+        -if current_user == @user || current_user.admin?
           %ul.droppdown
             Menu
             %li.droppdown__li
               = link_to "トップ画面", root_path, class: "droppdown__li__content"
             %li.droppdown__li
-              = link_to "ログイン", new_user_session_path, class: "droppdown__li__content"
-            %li.droppdown__li
-              = link_to "新規登録", new_user_registration_path, class: "droppdown__li__content"
+              = link_to "マイページ",user_path(current_user.id), class: "droppdown__li__content"
             %li.droppdown__li
               = link_to "チャット画面", teams_path, class: "droppdown__li__content"
             %li.droppdown__li
               = link_to "ブログ一覧", blogs_path, class: "droppdown__li__content"
             %li.droppdown__li
+              = link_to "ブログ投稿", new_blog_path, class: "droppdown__li__content"
+            %li.droppdown__li
+              = link_to "新規チーム",  new_team_path,class: "droppdown__li__content"
+            %li.droppdown__li
+              = link_to "新規選手", new_player_path, class: "droppdown__li__content"
+            %li.droppdown__li
+              = link_to "新規監督", new_maneger_path, class: "droppdown__li__content"
+            %li.droppdown__li
+              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "droppdown__li__content"
+        - else
+          %ul.droppdown
+            Menu
+            %li.droppdown__li
+              = link_to "トップ画面", root_path, class: "droppdown__li__content"
+            %li.droppdown__li
+              = link_to "マイページ",user_path(current_user.id), class: "droppdown__li__content"
+            %li.droppdown__li
               = link_to "チャット画面", teams_path, class: "droppdown__li__content"
+            %li.droppdown__li
+              = link_to "ブログ一覧", blogs_path, class: "droppdown__li__content"
+            %li.droppdown__li
+              = link_to "ブログ投稿", new_blog_path, class: "droppdown__li__content"
+            %li.droppdown__li
+              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "droppdown__li__content"
+      - else 
+        %ul.droppdown
+          Menu
+          %li.droppdown__li
+            = link_to "トップ画面", root_path, class: "droppdown__li__content"
+          %li.droppdown__li
+            = link_to "ログイン", new_user_session_path, class: "droppdown__li__content"
+          %li.droppdown__li
+            = link_to "新規登録", new_user_registration_path, class: "droppdown__li__content"
+          %li.droppdown__li
 
 
     = yield
+    

@@ -1,11 +1,14 @@
 class ManegersController < ApplicationController
+
+  before_action :if_not_admin
+
   def new
     @maneger = Maneger.new
   end
 
   def create
     @maneger = Maneger.create(maneger_params)
-    redirect_to root_path
+    redirect_to root_path, notice: '監督を登録しました!'
   end
 
   def edit
@@ -15,7 +18,7 @@ class ManegersController < ApplicationController
   def update
     @maneger = Maneger.find(params[:id])
     Maneger.update(maneger_params)
-    redirect_to root_path
+    redirect_to root_path, notice: '監督を更新しました!'
   end
 
   def destroy
@@ -27,5 +30,9 @@ class ManegersController < ApplicationController
   private 
   def maneger_params
     params.require(:maneger).permit(:name, :birthday, :nationally, :team_id)
+  end
+
+  def if_not_admin
+    redirect_to root_path unless current_user.admin
   end
 end
