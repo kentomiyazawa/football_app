@@ -14,7 +14,6 @@ Rails.application.routes.draw do
       resources :blogcomments, only: :index, defaults: { format: 'json' }
     end
   end
-
   resources :teams do
     resources :comments, only: :create
     namespace :api do

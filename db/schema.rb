@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_11_084213) do
+ActiveRecord::Schema.define(version: 2020_05_12_145518) do
 
   create_table "blogcomments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 2020_05_11_084213) do
   create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "position"
-    t.string "uniform_number"
     t.string "footed"
     t.integer "height"
     t.integer "weight"
@@ -66,6 +65,7 @@ ActiveRecord::Schema.define(version: 2020_05_11_084213) do
     t.datetime "updated_at", null: false
     t.date "birthday"
     t.integer "team_id"
+    t.integer "uniform_number"
   end
 
   create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

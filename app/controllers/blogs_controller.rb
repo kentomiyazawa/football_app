@@ -18,23 +18,32 @@ class BlogsController < ApplicationController
   end
 
   def create
-    @blog = Blog.create(blog_params)
-    redirect_to user_path(@blog.user)
+    if @blog = Blog.create(blog_params)
+      redirect_to user_path(@blog.user)
+    else
+      render :new
+    end
   end
 
   def edit
     @blog = Blog.find(params[:id])
+    if @blog.user != current_user
+      redirect_to blogs_path
+    end
   end
 
   def update
     @blog = Blog.find(params[:id])
-    @blog.update(blog_params)
+    if @blog.update(blog_params)
     redirect_to blog_path(@blog.user)
+    else
+      render :edit
+    end
   end
 
   def destroy
-    blog = Blog.find(params[:id])
-    blog.destroy
+    @blog = Blog.find(params[:id])
+    @blog.destroy
     redirect_to blogs_path
   end
 
@@ -42,4 +51,5 @@ class BlogsController < ApplicationController
   def blog_params
     params.require(:blog).permit(:title, :text).merge(user_id: current_user.id)
   end
+
 end

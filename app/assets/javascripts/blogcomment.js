@@ -19,7 +19,7 @@ $(function(){
   var reloadBlogcomments = function(){
     var last_blogcomment_id = $('.blog--comments__box__comment:last').data("blogcomment-id");
     $.ajax({
-      url: "api/blogcomments",
+      url: "/blogs/blog/api/blogcomments",
       type: 'get',
       dataType: 'json',
       data: {id: last_blogcomment_id}

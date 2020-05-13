@@ -1,11 +1,14 @@
 class TeamsController < ApplicationController
+
+  before_action :if_not_admin, except: [:index, :show, :chat]
+
   def index
     @teams = Team.all
   end
 
   def show
     @team = Team.find(params[:id])
-    @players = @team.players.order(:uniform_number)
+    @players = @team.players.order(uniform_number: :ASC)
     @maneger = @team.maneger
   end
 
@@ -38,6 +41,11 @@ class TeamsController < ApplicationController
   private
   def team_params
     params.require(:team).permit(:name, :home, :stadium, :founding_year, :image)
+  end
+
+
+  def if_not_admin
+    redirect_to root_path unless current_user.admin
   end
 
 end
