@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_12_145518) do
+ActiveRecord::Schema.define(version: 2020_05_14_091600) do
 
   create_table "blogcomments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -36,6 +36,18 @@ ActiveRecord::Schema.define(version: 2020_05_12_145518) do
     t.integer "team_id"
   end
 
+  create_table "games", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.time "start_time", null: false
+    t.bigint "match_id", null: false
+    t.bigint "home_team_id", null: false
+    t.bigint "away_team_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["away_team_id"], name: "index_games_on_away_team_id"
+    t.index ["home_team_id"], name: "index_games_on_home_team_id"
+    t.index ["match_id"], name: "index_games_on_match_id"
+  end
+
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "blog_id"
     t.bigint "user_id"
@@ -52,6 +64,13 @@ ActiveRecord::Schema.define(version: 2020_05_12_145518) do
     t.integer "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "matches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "start_time"
   end
 
   create_table "players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -102,6 +121,9 @@ ActiveRecord::Schema.define(version: 2020_05_12_145518) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "games", "matches"
+  add_foreign_key "games", "teams", column: "away_team_id"
+  add_foreign_key "games", "teams", column: "home_team_id"
   add_foreign_key "likes", "blogs"
   add_foreign_key "likes", "users"
   add_foreign_key "user_teams", "teams"

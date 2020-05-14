@@ -27,6 +27,8 @@
             %li.droppdown__li
               = link_to "マイページ",user_path(current_user.id), class: "droppdown__li__content"
             %li.droppdown__li
+              = link_to "試合日程", matches_path, class: "droppdown__li__content"
+            %li.droppdown__li
               = link_to "チャット画面", teams_path, class: "droppdown__li__content"
             %li.droppdown__li
               = link_to "ブログ一覧", blogs_path, class: "droppdown__li__content"
@@ -47,6 +49,8 @@
               = link_to "トップ画面", root_path, class: "droppdown__li__content"
             %li.droppdown__li
               = link_to "マイページ",user_path(current_user.id), class: "droppdown__li__content"
+            %li.droppdown__li
+              = link_to "試合日程", matches_path, class: "droppdown__li__content"
             %li.droppdown__li
               = link_to "チャット画面", teams_path, class: "droppdown__li__content"
             %li.droppdown__li

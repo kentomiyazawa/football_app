@@ -1,0 +1,33 @@
+%p#notice= notice
+.main
+  .matche__title
+    %h1
+      = @match.name
+  .matche__list
+    %table
+      %tr
+        %th
+          キックオフ
+        %th
+          ホーム
+        %th
+        %th
+          アウェイ
+
+      - @games.each do |game|
+        %tr
+          %td
+            = game.start_time.strftime('%H:%M')
+          %td
+            = link_to game.home_team.name.capitalize, team_path(game.home_team.id)
+          %td
+            vs
+          %td
+            = link_to game.away_team.name.capitalize, team_path(game.home_team.id)
+          - if user_signed_in?
+            -if current_user == @user || current_user.admin?
+              %td
+                = link_to "編集", edit_game_path(game)
+              %td
+                = link_to "削除", game_path(game), method: :delete
+
