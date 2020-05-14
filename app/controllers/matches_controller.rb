@@ -11,7 +11,7 @@ class MatchesController < ApplicationController
   # GET /matches/1
   # GET /matches/1.json
   def show
-    @games = @match.games
+    @games = @match.games.order(start_time: :ASC)
   end
 
   # GET /matches/new
@@ -58,7 +58,7 @@ class MatchesController < ApplicationController
   def destroy
     @match.destroy
     respond_to do |format|
-      format.html { redirect_to matches_url, notice: 'Match was successfully destroyed.' }
+      format.html { redirect_to matches_path, notice: 'Match was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

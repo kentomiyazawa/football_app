@@ -18,7 +18,7 @@ class GamesController < ApplicationController
   def update
     @game = Game.find(params[:id])
     @game.update(game_params)
-    redirect_to game_path(@game), notice: '試合を更新しました!'
+    redirect_to match_path(@game.match.id)
   end
 
   def destroy

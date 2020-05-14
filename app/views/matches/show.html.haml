@@ -30,4 +30,7 @@
                 = link_to "編集", edit_game_path(game)
               %td
                 = link_to "削除", game_path(game), method: :delete
+  - if user_signed_in?
+    -if current_user == @user || current_user.admin?
+      = link_to "日程削除", match_path(@match), method: :delete
 
