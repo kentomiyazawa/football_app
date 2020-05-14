@@ -69,3 +69,4 @@ gem 'pry-rails'
 gem 'kaminari'
 gem 'font-awesome-sass'
 gem 'ransack'
+gem "simple_calendar", "~> 2.0"
