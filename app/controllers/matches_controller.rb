@@ -1,5 +1,6 @@
 class MatchesController < ApplicationController
   before_action :set_match, only: [:show, :edit, :update, :destroy]
+  before_action :if_not_admin, except: [:index, :show]
 
   # GET /matches
   # GET /matches.json
@@ -71,5 +72,9 @@ class MatchesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def match_params
       params.require(:match).permit(:name, :start_time)
+    end
+
+    def if_not_admin
+      redirect_to root_path unless current_user.admin
     end
 end
