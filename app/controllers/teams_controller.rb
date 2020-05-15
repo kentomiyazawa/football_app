@@ -3,7 +3,7 @@ class TeamsController < ApplicationController
   before_action :if_not_admin, except: [:index, :show, :chat]
 
   def index
-    @teams = Team.all
+    @teams = Team.all.order(name: :ASC)
   end
 
   def show

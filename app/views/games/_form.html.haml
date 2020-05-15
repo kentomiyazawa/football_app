@@ -1,0 +1,19 @@
+= form_for @game do |f|
+  .game-form__input
+    = f.label :match_id, "日程"
+    = f.collection_select :match_id, Match.all, :id, :name
+
+  .game-form__input
+    = f.label :home_team_id ,"ホームチーム"
+    = f.collection_select :home_team_id, Team.all, :id, :name
+
+  .game-form__input
+    = f.label :away_team_id, "アウェイチーム"
+    = f.collection_select :away_team_id, Team.all, :id, :name
+
+  .game-form__input
+    = f.label :start_time,"日時(日本時間)"
+    = f.time_field :start_time
+
+  .game-form__submit
+    = f.submit 'Save'

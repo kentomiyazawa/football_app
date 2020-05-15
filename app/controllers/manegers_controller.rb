@@ -17,7 +17,7 @@ class ManegersController < ApplicationController
 
   def update
     @maneger = Maneger.find(params[:id])
-    Maneger.update(maneger_params)
+    @maneger.update(maneger_params)
     redirect_to root_path, notice: '監督を更新しました!'
   end
 

@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "homes#index"
-
   get '/teams/:id/chat', to: 'teams#chat'
   post "likes/:blog_id/create" => "likes#create"
   post "likes/:blog_id/destroy" => "likes#destroy"
   resources :users
   resources :manegers
   resources :players
+  resources :games
+  resources :matches
   resources :blogs do
     resources :blogcomments, only: :create
   end

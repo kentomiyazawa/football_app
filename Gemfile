@@ -70,3 +70,4 @@ gem 'kaminari'
 gem 'font-awesome-sass'
 gem 'ransack'
 gem "simple_calendar", "~> 2.0"
+gem 'rails-i18n', '~> 5.1' 
