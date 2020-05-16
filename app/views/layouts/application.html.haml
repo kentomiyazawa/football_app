@@ -35,6 +35,8 @@
             %li.droppdown__li
               = link_to "ブログ投稿", new_blog_path, class: "droppdown__li__content"
             %li.droppdown__li
+              = link_to "動画", youtube_path, class: "droppdown__li__content"
+            %li.droppdown__li
               = link_to "新規チーム",  new_team_path,class: "droppdown__li__content"
             %li.droppdown__li
               = link_to "新規選手", new_player_path, class: "droppdown__li__content"
@@ -57,6 +59,8 @@
               = link_to "ブログ一覧", blogs_path, class: "droppdown__li__content"
             %li.droppdown__li
               = link_to "ブログ投稿", new_blog_path, class: "droppdown__li__content"
+            %li.droppdown__li
+              = link_to "動画", youtube_path, class: "droppdown__li__content"
             %li.droppdown__li
               = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "droppdown__li__content"
       - else 
