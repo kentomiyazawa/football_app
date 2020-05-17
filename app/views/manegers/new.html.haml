@@ -2,4 +2,8 @@
   .maneger-form 
     %h1.maneger-form__title
       新規監督
+    - if @maneger.errors.any?
+      .error-message
+        %h1
+          送信できませんでしたorz内容を確認してください！
     = render partial: "form"

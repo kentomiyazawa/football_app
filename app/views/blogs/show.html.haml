@@ -22,7 +22,7 @@
           = "#{@likes_count}いいね！"
       - if user_signed_in? && current_user.id == @blog.user_id
         = link_to "編集", edit_blog_path(@blog), class: "blog__info__edit"
-        = link_to "削除", blog_path, method: :delete,  class: "blog__info__delete"
+        = link_to "削除", blog_path, method: :delete,  class: "blog__info__delete", data: { confirm: '削除してもよろしいですか?'}
   .blog--comments
     %h1
       Comment

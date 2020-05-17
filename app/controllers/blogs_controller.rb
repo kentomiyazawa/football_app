@@ -18,7 +18,8 @@ class BlogsController < ApplicationController
   end
 
   def create
-    if @blog = Blog.create(blog_params)
+    @blog = Blog.new(blog_params)
+    if @blog.save
       redirect_to user_path(@blog.user), notice: "ブログの投稿に成功しました！"
     else
       render :new

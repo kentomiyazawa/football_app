@@ -48,7 +48,7 @@
                     %td.team-lists__list__player__edit
                       = link_to "編集", edit_player_path(player)
                     %td.team-lists__list__player__edit
-                      = link_to "削除", player_path(player), method: :delete
+                      = link_to "削除", player_path(player), method: :delete, data: { confirm: '削除してもよろしいですか?'}
       - else
         %p
           選手データ準備中です。少々お待ちください。
@@ -76,7 +76,7 @@
                   %td.team-lists__list__maneger__edit
                     = link_to "編集", edit_maneger_path(@maneger)
                   %td.team-lists__list__maneger__edit
-                    = link_to "削除", maneger_path(@maneger), method: :delete
+                    = link_to "削除", maneger_path(@maneger), method: :delete, data: { confirm: '削除してもよろしいですか?'}
       - else
         %p
           監督データ準備中です。少々お待ちください。
