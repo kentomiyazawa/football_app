@@ -1,7 +1,8 @@
 $(function(){
 
   function buildHTML(blogcomment){
-    var html = `<div class="blog--comments__box__comment">
+    var html = `
+                <div class="blog--comments__box__comment">
                   <div class="blog--comments__box__comment__text">
                     ${blogcomment.text}
                   </div>
