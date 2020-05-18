@@ -8,4 +8,6 @@ class Team < ApplicationRecord
   has_many :home_team_games, class_name: 'Game', :foreign_key => 'home_team_id'
   has_many :away_team_games, class_name: 'Game', :foreign_key => 'away_team_id'
   validates :name, :home, :stadium, :founding_year, presence: true
+
+  
 end
