@@ -11,8 +11,7 @@ $(function(){
                       ${blogcomment.created_at}
                     </div>
                   </div>
-                </div>
-    `
+                </div>`
     return html;
   }
 
