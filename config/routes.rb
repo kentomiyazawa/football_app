@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/teams/:id/chat', to: 'teams#chat'
   post "likes/:blog_id/create" => "likes#create"
   post "likes/:blog_id/destroy" => "likes#destroy"
+
+  get '/youtube', to: 'youtube#index'
   resources :users
   resources :manegers
   resources :players

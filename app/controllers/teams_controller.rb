@@ -17,8 +17,12 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @team = Team.create(team_params)
-    redirect_to teams_path(@team), notice: 'チームを登録しました！'
+    @team = Team.new(team_params)
+    if @team.save
+      redirect_to teams_path(@team), notice: 'チームを登録しました！'
+    else
+      render :new
+    end
   end
 
   def edit
@@ -27,8 +31,11 @@ class TeamsController < ApplicationController
 
   def update
     @team = Team.find(params[:id])
-    @team.update(team_params)
-    redirect_to root_path, notice: 'チームを更新しました！'
+    if @team.update(team_params)
+      redirect_to root_path, notice: 'チームを更新しました！'
+    else
+      render :edit
+    end
   end
 
   def chat

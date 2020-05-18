@@ -2,4 +2,8 @@
   .blog-form 
     %h1.blog-form__title
       ブログ編集
+    - if @blog.errors.any?
+      .error-message
+        %h1
+          送信できませんでしたorz内容を確認してください！
     = render partial: "form"

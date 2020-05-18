@@ -2,6 +2,10 @@
   .game-form
     %h1.game-form__title
       試合編集
+    - if @game.errors.any?
+      .error-message
+        %h1
+          送信できませんでしたorz内容を確認してください！
     = render partial: "form"
 
   

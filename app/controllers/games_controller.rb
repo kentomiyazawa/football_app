@@ -7,8 +7,12 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.create(game_params)
-    redirect_to matches_path, notice: '試合を登録しました!'
+    @game = Game.new(game_params)
+    if @games.save
+      redirect_to matches_path, notice: '試合を登録しました!'
+    else
+      render :new
+    end
   end
 
   def edit
@@ -17,8 +21,11 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
-    @game.update(game_params)
+    if @game.update(game_params)
     redirect_to match_path(@game.match.id)
+    else 
+      render :edit
+    end
   end
 
   def destroy

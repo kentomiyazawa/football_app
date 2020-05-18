@@ -3,5 +3,6 @@ class Blog < ApplicationRecord
   has_many :blogcomments
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
-  validates :title, :text, presence: true
+  validates :title, presence: true
+  validates :text, presence: true
 end

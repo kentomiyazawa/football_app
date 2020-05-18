@@ -9,6 +9,7 @@
 @import "modules/scaffolds";
 @import "modules/matches";
 @import "modules/games";
+@import "modules/youtube";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
@@ -75,5 +76,11 @@ header {
   height: 100vh;
 }
 
+.error-message {
+  h1 {
+    color: red;
+    text-align: center;
+  }
+}
 
 

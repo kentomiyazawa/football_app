@@ -11,7 +11,7 @@ class MatchesController < ApplicationController
   # GET /matches/1
   # GET /matches/1.json
   def show
-    @games = @match.games.order(start_time: :ASC)
+    @games = @match.games.order(start_time: :ASC).includes(:away_team).includes(:home_team)
   end
 
   # GET /matches/new

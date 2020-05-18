@@ -3,6 +3,10 @@
   .player-form
     %h1.player-form__title
       新規選手入力
+    - if @player.errors.any?
+      .error-message
+        %h1
+          送信できませんでしたorz内容を確認してください！
     = render partial: "form"
 
   

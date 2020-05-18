@@ -2,4 +2,8 @@
   .team-form
     %h1.team-form__title
       チーム編集
+    - if @team.errors.any?
+      .error-message
+        %h1
+          送信できませんでしたorz内容を確認してください！
     = render partial: "form"
