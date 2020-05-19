@@ -154,6 +154,13 @@
     width: 280px;
     height: 500px;
     overflow: scroll;
+    table {
+      tr {
+        th {
+          text-align: center;
+        }
+      }
+    }
   }
   &__back {
     margin: 10px auto 0px auto;
