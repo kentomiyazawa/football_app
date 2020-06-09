@@ -1,27 +1,25 @@
-
-
 = form_for @team do |f|
-  .team-form__input
+  .common-form__input
     = f.label :name, "チーム名"
-    = f.text_field :name
+    = f.text_field :name, placeholder: "英語で記入"
 
-  .team-form__input
+  .common-form__input
     = f.label :home, "本拠地"
-    = f.text_field :home
+    = f.text_field :home, placeholder: "英語で記入"
 
-  .team-form__input
+  .common-form__input
     = f.label :stadium, "スタジアム"
-    = f.text_field :stadium
+    = f.text_field :stadium, placeholder: "英語で記入"
 
-  .team-form__input
+  .common-form__input
     = f.label :founding_year, "創設年"
-    = f.text_field :founding_year
+    = f.number_field :founding_year, placeholder: "数字のみ"
 
-  .team-form__input
+  .common-form__input
     = f.label :image, "ロゴ画像"
     = f.attachment_field :image
 
-  .team-form__submit
+  .common-form__submit
     = f.submit '送信', class: "new-form__submit__btn"
 
    

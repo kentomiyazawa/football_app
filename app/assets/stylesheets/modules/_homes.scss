@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #1e1e1e;
+  background-color: $black;
   z-index: 9999;
 }
 
@@ -15,7 +15,7 @@
   left: 0;
   bottom: 0;
   margin: auto;
-  background-color: #fff;
+  background-color: $white;
   width: 0;
   height: 1px;
 }

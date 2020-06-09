@@ -10,16 +10,20 @@
       = link_to @blog.user.name, user_path(@blog.user), class: "blog__info__name"
       .blog__info__create
         = "#{@blog.created_at.strftime("%Y年%m月%d日")}作成"
-      .blog__info__like
-        .blog__info__like__icon
-          - if Like.find_by(user_id: current_user.id, blog_id: @blog.id)
-            = link_to("/likes/#{@blog.id}/destroy", method: :post) do
-              %span.far.fa-thumbs-up.blog__info__like__icon__already
-          - else
-            = link_to("/likes/#{@blog.id}/create", method: :post) do
-              %span.far.fa-thumbs-up.blog__info__like__icon__none
-        .blog__info__like__num
-          = "#{@likes_count}いいね！"
+      - if user_signed_in?
+        .blog__info__like
+          .blog__info__like__icon
+            - if Like.find_by(user_id: current_user.id, blog_id: @blog.id)
+              = link_to("/likes/#{@blog.id}/destroy", method: :post) do
+                %span.far.fa-thumbs-up.blog__info__like__icon__already
+            - else
+              = link_to("/likes/#{@blog.id}/create", method: :post) do
+                %span.far.fa-thumbs-up.blog__info__like__icon__none
+          .blog__info__like__num
+            = "#{@likes_count}いいね！"
+      - else
+        %p
+          いいねをするにはログインをする必要があります
       - if user_signed_in? && current_user.id == @blog.user_id
         = link_to "編集", edit_blog_path(@blog), class: "blog__info__edit"
         = link_to "削除", blog_path, method: :delete,  class: "blog__info__delete", data: { confirm: '削除してもよろしいですか?'}
@@ -44,4 +48,4 @@
             = f.submit "送信", class: "blogcomment__submit"
       - else
         %p
-          ログインしてください
+          コメントする為にはログインか新規登録が必要です

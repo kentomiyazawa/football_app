@@ -61,7 +61,7 @@
   
 
   .comment__form
-    -if current_user
+    -if user_signed_in?
       = form_for [@team, @comment] do |f|
         .form__box
           = f.label :comment, "コメント" , class: "form__box__label"
@@ -69,5 +69,11 @@
 
           = f.submit "送信", class: "form__box__btn"
     - else
-      %p
-        ログインしてくだい
+      .comment__form__message
+        %h1
+          コメントするにはログインか新規投稿が必要です。
+        .comment__form__message__box
+          .comment__form__message__box__btn
+            = link_to "ログイン", new_user_session_path
+          .comment__form__message__box__btn
+            = link_to "新規登録", new_user_registration_path

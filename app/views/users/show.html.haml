@@ -21,6 +21,6 @@
       - else 
         %p
           投稿はありません。
-  - if current_user.id == @user.id
+  - if user_signed_in? && current_user.id == @user.id
     .user-edit-btn
       = link_to "プロフィール編集", edit_user_path(@user)

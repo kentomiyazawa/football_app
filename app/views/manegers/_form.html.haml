@@ -1,21 +1,21 @@
 
 = form_for @maneger do |f|
-  .team-form__team
-    = f.collection_select :team_id, Team.all, :id, :name
+  .common-form__team
+    = f.collection_select :team_id, Team.all, :id, :name, prompt: "選択してください"
 
-  .team-form__input
+  .common-form__input
     = f.label :name, "名前"
-    = f.text_field :name
+    = f.text_field :name, placeholder: "英語で記入"
 
-  .team-form__input
+  .common-form__input
     = f.label :birthday, "生年月日"
     = f.date_select :birthday, {start_year: 1950}
 
-  .team-form__input
+  .common-form__input
     = f.label :nationally, "国籍"
-    = f.text_field :nationally
+    = f.text_field :nationally, placeholder: "英語で記入"
 
-  .team-form__submit
+  .common-form__submit
     = f.submit "送信"
 
 
