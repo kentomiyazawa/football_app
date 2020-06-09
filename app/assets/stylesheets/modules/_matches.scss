@@ -1,12 +1,14 @@
 //試合一覧
-.matche__title {
+.match__title {
   h1{
     text-align: center;
     font-size: 25px;
   }
 }
-.matche__list{
+.match__list{
+
   table {
+    background-color: $light-gray;
     margin: 0 auto;
     tr{
       border: $border-black;
@@ -23,29 +25,3 @@
   }
 }
 
-//フォーム
-.match-form {
-  width: 400px;
-  margin: 0px auto;
-  border: $border-black;
-  border-radius: 5px;
-  background-color: $light-gray;
-  &__title {
-    font-size: 25px;
-    text-align: center;
-    margin-bottom: 10px;
-    border-bottom: $border-black;
-  }
-  &__team {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  &__input {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-  &__submit {
-    text-align: center;
-  }
-}

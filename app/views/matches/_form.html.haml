@@ -6,11 +6,11 @@
         - @match.errors.full_messages.each do |message|
           %li= message
 
-  .match-form__input
+  .common-form__input
     = f.label :name, "第何節"
     = f.text_field :name, placeholder: "○○節(○/○)"
-  .match-form__input
+  .common-form__input
     = f.label :start_time,"日時"
     = f.date_select :start_time, default: { year: 2020, month: 1, day: 1 }
-  .team-form__submit
+  .common-form__submit
     = f.submit 'Save'
