@@ -16,8 +16,7 @@
   background-color: $light-gray;
   width: 900px;
   height: 300px;
-  margin: 0 auto;
-  border-radius: 10px;
+  margin:  auto;
   border: $border-black;
   &__name {
     font-size: 25px;
@@ -30,7 +29,6 @@
   width: 900px;
   height: 300px;
   margin: 0 auto;
-  border-radius: 10px;
   border: $border-black;
   margin-top: 5px;
   h1 {
@@ -41,7 +39,7 @@
   }
   &__list {
     overflow: scroll;
-    height: 245px;
+    height: 250px;
     &__blog {
       display: flex;
       background-color: $gray;
