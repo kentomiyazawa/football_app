@@ -17,8 +17,8 @@
 ・My SQL
 ・Visual Studio Code
 
-## 内容
-トップ画面
+# 内容
+## トップ画面
 slickを使用して、スライドショーを作成しました。
 ![](https://i.gyazo.com/3b43905b157b00a7314b5a642e1f38de.jpg)
 

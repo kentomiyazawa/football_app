@@ -36,7 +36,7 @@ class BlogsController < ApplicationController
   def update
     @blog = Blog.find(params[:id])
     if @blog.update(blog_params)
-    redirect_to blog_path(@blog.user), notice: "ブログが更新されました!"
+    redirect_to user_path(current_user.id), notice: "ブログが更新されました!"
     else
       render :edit
     end
@@ -45,7 +45,7 @@ class BlogsController < ApplicationController
   def destroy
     @blog = Blog.find(params[:id])
     @blog.destroy
-    redirect_to blogs_path
+    redirect_to user_path(current_user.id)
   end
 
   private

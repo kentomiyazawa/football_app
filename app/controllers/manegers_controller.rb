@@ -9,7 +9,7 @@ class ManegersController < ApplicationController
   def create
     @maneger = Maneger.new(maneger_params)
     if @maneger.save
-      redirect_to root_path, notice: '監督を登録しました!'
+      redirect_to teams_path, notice: '監督を登録しました!'
     else
       render :new
     end
@@ -31,7 +31,7 @@ class ManegersController < ApplicationController
   def destroy
     @maneger = Maneger.find(params[:id])
     @maneger.destroy
-    redirect_to new_maneger_path
+    redirect_to teams_path
   end
 
   private 
