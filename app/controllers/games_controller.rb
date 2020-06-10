@@ -8,7 +8,7 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
-    if @games.save
+    if @game.save
       redirect_to matches_path, notice: '試合を登録しました!'
     else
       render :new
