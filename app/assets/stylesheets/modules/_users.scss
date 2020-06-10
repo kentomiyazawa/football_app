@@ -80,7 +80,7 @@
   }
 }
 
-//フォーム
+//プロフィールフォーム
 .user-form {
   padding: 40px;
   width: 500px;
@@ -88,7 +88,6 @@
   border: $border-black;
   border-radius: 5px;
   background-color: $light-gray; 
-  height: 600px;
   &__title {
     font-size: 25px;
     text-align: center;
@@ -118,6 +117,74 @@
         background-color: $sky-blue;
         color: $white;
         opacity: 0.8;
+      }
+    }
+  }
+}
+
+// ログイン・サインアップフォーム
+.user-registration{
+  padding: 40px;
+  width: 500px;
+  margin: 50px auto;
+  border: $border-black;
+  background-color: $light-gray; 
+  height: 400px;
+  .sns {
+    margin-top: 50px;
+    .icons {
+      display: flex;
+      justify-content: space-around;
+      &__icon {
+        > a {
+          > i {
+            font-size: 40px;
+          }
+        }
+        &__twitter {
+          > i {
+            color: skyblue;
+          }
+        }
+        &__facebook {
+          > i {
+            color: blue;
+          }
+        }
+        &__line {
+          > i {
+            color: green;
+          }
+        }
+      }
+    }
+  }
+  .mailaddress {
+    h3 {
+      text-align: center;
+      font-family: fantasy;
+      font-size: 30px;
+    }
+    .field {
+      text-align: center;
+      input {
+        width: 400px;
+      }
+    }
+    .actions {
+      margin-top: 20px;
+      input {
+        display: block;
+        width: 400px;
+        height: 30px;
+        margin: 0 auto;
+        background-color: $white;
+        border: $border-black;
+        cursor: pointer;
+        &:hover {
+          background-color: $sky-blue;
+          opacity: 0.8;
+        }
       }
     }
   }

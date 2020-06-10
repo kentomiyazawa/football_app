@@ -1,19 +1,27 @@
 .main
-  .user-form
-    %h2 Log in
-    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .field
-        = f.label :email
-        %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email"
-      .field
-        = f.label :password
-        %br/
-        = f.password_field :password, autocomplete: "current-password"
-      - if devise_mapping.rememberable?
+  .user-registration
+    .mailaddress
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        %h3
+          Log in
         .field
-          = f.check_box :remember_me
-          = f.label :remember_me
-      .actions
-        = f.submit "Log in"
-
+          = f.label :email, "Email"
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .field
+          = f.label :password, "Password(6文字以上)"
+          %br/
+          = f.password_field :password, autocomplete: "current-password"
+        .actions
+          = f.submit "Log in"
+    .sns
+      .icons
+        .icons__icon
+          = link_to "#" , class: 'icons__icon__twitter' do
+            = icon('fab', 'twitter-square' )
+        .icons__icon
+          = link_to "#", class: 'icons__icon__facebook' do
+            = icon('fab', 'facebook-square')
+        .icons__icon
+          = link_to "#", class: 'icons__icon__line' do
+            = icon('fab', 'line')
