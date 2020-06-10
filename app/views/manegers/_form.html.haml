@@ -1,6 +1,7 @@
 
 = form_for @maneger do |f|
   .common-form__team
+    = f.label :team_id, "チーム名"
     = f.collection_select :team_id, Team.all, :id, :name, prompt: "選択してください"
 
   .common-form__input

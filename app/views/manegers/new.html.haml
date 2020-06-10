@@ -4,6 +4,8 @@
       新規監督
     - if @maneger.errors.any?
       .error-message
-        %h1
-          送信できませんでしたorz内容を確認してください！
+        %ul
+          - @maneger.errors.full_messages.each do |message|
+            %li
+              = message
     = render partial: "form"

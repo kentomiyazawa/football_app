@@ -1,24 +1,24 @@
-# README
+# なぜ作ったか?
+私はサッカーが好きで、よくスタジアムに通っていました。コロナの状況で無観客試合が多くなり、その中でもサッカー好きがコミュニケーションを取れるアプリを作りたいと思い作成しました。また主に以下の三点を念頭に置きながら、作成しました。
+## ①スクールで学んだことを活かす
+プログラミングスクールに通い多くのことを学びました。インプットするだけでは成長しないので、アウトプットもしようと思いました。なので、スクールで学んだ投稿、編集、削除、コメントなどの機能やテストは最低限実装しました。
+## ②スクールで学んだこと以外も実装してみる
+受動的に学ぶだけでは成長しないと思ったので、カリキュラム以外のことも入れてみました。youtubeのAPIやsimple calenderを使用してのカレンダー、slickを使ってのスライドショーなどを入れてみました。
+## ③１作目よりも綺麗にコードを書いてみる。
+１作目のコードはかなりコードがゴチャゴチャしておりました。ですので、リファクタリング出来るところは積極的にリファクタリングして、コードをなるべく省略しました。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 開発環境
+・Ruby(Ruby on rails '5.2.4')
+・Haml
+・Sass
+・jQuery
+・Git hub
+・Heroku
+・My SQL
+・Visual Studio Code
 
-Things you may want to cover:
+## 内容
+トップ画面
+slickを使用して、スライドショーを作成しました。
+![](https://i.gyazo.com/3b43905b157b00a7314b5a642e1f38de.jpg)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

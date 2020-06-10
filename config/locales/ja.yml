@@ -56,3 +56,30 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  activerecord:
+    attributes:
+      player:
+        name: 名前
+        position: ポジジョン
+        footed: 利き足
+        height: 身長
+        weight: 体重
+        nationally: 国籍
+        birthday: 誕生日
+        uniform_number: 背番号
+        team_id: チーム名
+      team:
+        name: チーム名
+        home: 本拠地
+        stadium: スタジアム
+        founding_year: 創設年
+      maneger:
+        name: 名前
+        team_id: チーム名
+        nationally: 国籍
+        birthday: 生年月日
+      blog: 
+        title: タイトル
+        text: テキスト
+
+

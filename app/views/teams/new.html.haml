@@ -4,6 +4,8 @@
       新規チーム登録
     - if @team.errors.any?
       .error-message
-        %h1
-          送信できませんでしたorz内容を確認してください！
+        %ul
+          - @team.errors.full_messages.each do |message|
+            %li
+              = message
     = render partial: "form"

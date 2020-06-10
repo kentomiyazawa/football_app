@@ -4,6 +4,8 @@
       ブログ編集
     - if @blog.errors.any?
       .error-message
-        %h1
-          送信できませんでしたorz内容を確認してください！
+        %ul
+          - @blog.errors.full_messages.each do |message|
+            %li
+              = message
     = render partial: "form"

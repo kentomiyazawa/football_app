@@ -5,8 +5,10 @@
       新規選手入力
     - if @player.errors.any?
       .error-message
-        %h1
-          送信できませんでしたorz内容を確認してください！
+        %ul
+          - @player.errors.full_messages.each do |message|
+            %li
+              = message
     = render partial: "form"
 
   
