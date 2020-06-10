@@ -42,12 +42,12 @@
             .blog--comments__box__comment__info__time
               = blogcomment.created_at.strftime("%Y年%m月%d日")
     .blog--comments__form
-      - if current_user
+      - if user_signed_in?
         = form_for [@blog, @blogcomment] do |f|
           .form__box
-            = f.text_field :text, class: "blogcomment__text__field"
+            = f.text_field :text, class: "form__box__field"
 
-            = f.submit "送信", class: "blogcomment__submit"
+            = f.submit "送信", class: "form__box__submit"
       - else
         %p
           コメントする為にはログインか新規登録が必要です

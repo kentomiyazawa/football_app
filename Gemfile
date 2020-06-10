@@ -69,7 +69,6 @@ gem "refile-mini_magick"
 gem 'devise'
 gem 'jquery-rails'
 gem 'pry-rails'
-gem 'kaminari'
 gem 'font-awesome-sass'
 gem 'ransack'
 gem "simple_calendar", "~> 2.0"

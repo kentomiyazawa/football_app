@@ -137,7 +137,7 @@
     text-align: center;
   }
   &__box {
-    height: 80%;
+    height: 75%;
     border-top: $border-black;
     overflow: scroll;
     &__comment {
@@ -158,8 +158,29 @@
   }
   &__form {
     margin-top: 5px;
-    height: 20%;
+    height: 25%;
     text-align: center;
+    .form__box {
+      margin: 0 auto;
+      width: 700px;
+      display: flex;
+      &__field {
+        width: 600px;
+        height: 40px;
+      }
+      &__submit {
+        margin-left: 10px;
+        display: block;
+        width: 80px;
+        background-color: $white;
+        border: $border-black;
+        cursor: pointer;
+        &:hover {
+          background-color: $sky-blue;
+          color: $white;
+        }
+      }
+    }
   }
 }
 

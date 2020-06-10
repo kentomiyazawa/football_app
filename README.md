@@ -21,4 +21,20 @@
 ## トップ画面
 slickを使用して、スライドショーを作成しました。
 ![](https://i.gyazo.com/3b43905b157b00a7314b5a642e1f38de.jpg)
+## YouTube 
+Youtube APIを使用して動画を観れるようにしました。
+![](https://i.gyazo.com/44d83bd45d10c506089100bc1bd3513b.jpg)
+## チャット画面
+チャットを行えます。非同期通信と自動更新をしております。
+![](https://i.gyazo.com/369fc29d6a988f9264dffa392ec88aef.png)
+## 試合日程
+simple calendarというgemを使い日程を観れるようにしました。
+![](https://i.gyazo.com/21c72be914ccefa0803151cd4df08dad.png)
+![](https://i.gyazo.com/21df16b50af8d222a9b68efba28de013.png)
+## マイページ
+![](https://i.gyazo.com/5731ce62645b0eed330b287c2e210b78.png)
+## ブログ画面
+![](https://i.gyazo.com/b599558d6758f4f269c3b737f126c8e0.png)
+## チーム情報
+![](https://i.gyazo.com/cec322b138824c58e60b03080ce0a5e8.png)
 
