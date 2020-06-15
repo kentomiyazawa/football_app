@@ -39,11 +39,11 @@ Youtube APIを使用して動画を観れるようにしました。
 ![](https://i.gyazo.com/44d83bd45d10c506089100bc1bd3513b.jpg)
 ### チャット画面
 チャットを行えます。非同期通信と自動更新をしております。
-![](https://i.gyazo.com/369fc29d6a988f9264dffa392ec88aef.png)
+![](https://i.gyazo.com/78e4cfcf275d4f9a0e7758cd48503dda.png)
 ### 試合日程
 simple calendarというgemを使い日程を観れるようにしました。
 ![](https://i.gyazo.com/21c72be914ccefa0803151cd4df08dad.png)
-![](https://i.gyazo.com/21df16b50af8d222a9b68efba28de013.png)
+![](https://i.gyazo.com/46a556e22e540d6432a0f03f0bf770f5.png)
 ### マイページ
 マイページでプロフィールを書く事ができます。
 ![](https://i.gyazo.com/5731ce62645b0eed330b287c2e210b78.png)
@@ -52,7 +52,7 @@ simple calendarというgemを使い日程を観れるようにしました。
 ![](https://i.gyazo.com/b599558d6758f4f269c3b737f126c8e0.png)
 ### チーム情報
 選手の情報を閲覧できます。
-![](https://i.gyazo.com/cec322b138824c58e60b03080ce0a5e8.png)
+![](https://i.gyazo.com/d28f67f35149db87181bcedf9589884d.png)
 
 ## 拘ったところ
 私自身、サッカーの試合を見る時、背番号で選手を判断する事があります。
