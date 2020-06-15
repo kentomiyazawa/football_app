@@ -6,29 +6,39 @@
   .match__list
     %table
       %tr
-        %th
+        %th.width100
           キックオフ
-        %th
+        %th.width350 
           ホーム
-        %th
-        %th
+        %th.width100
+        %th.width350 
           アウェイ
 
       - @games.each do |game|
         %tr
-          %td
+          %td.width100
             = game.start_time.strftime('%H:%M')
-          %td
-            = link_to game.home_team.name.capitalize, team_path(game.home_team.id)
-          %td
+
+          %td.team.width300 
+            = link_to team_path(game.home_team.id) do
+              .team_logo
+                = attachment_image_tag game.home_team, :image
+              .team_name
+                = game.home_team.name.capitalize
+
+          %td.width100
             vs
-          %td
-            = link_to game.away_team.name.capitalize, team_path(game.away_team.id)
+          %td.team.width350 
+            = link_to team_path(game.away_team.id) do
+              .team_logo
+                = attachment_image_tag game.away_team, :image
+              .team_name
+                = game.away_team.name.capitalize
           - if user_signed_in?
             -if current_user == @user || current_user.admin?
-              %td
+              %td.width100
                 = link_to "編集", edit_game_path(game)
-              %td
+              %td.width100
                 = link_to "削除", game_path(game), method: :delete, data: { confirm: '削除してもよろしいですか?'}
   - if user_signed_in?
     -if current_user == @user || current_user.admin?

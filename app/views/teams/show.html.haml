@@ -1,7 +1,11 @@
 .main
   .team-lists
-    %h1
-      = @team.name.upcase
+    .team-lists__team__detail
+      .team-lists__team__detail__content    
+        .team-lists__team__detail__content__logo
+          = attachment_image_tag @team, :image
+        %h1
+          = @team.name.upcase
     .team-lists__list
       - if @players.present?
         .team-lists__list__player
