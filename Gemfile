@@ -74,5 +74,3 @@ gem 'ransack'
 gem "simple_calendar", "~> 2.0"
 gem 'rails-i18n', '~> 5.1' 
 gem 'google-api-client', '0.9.20', require: 'google/apis/youtube_v3'
-gem "refile-s3"
-gem 'dotenv-rails'
